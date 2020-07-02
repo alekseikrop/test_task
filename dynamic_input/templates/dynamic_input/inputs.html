@@ -1,0 +1,23 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <title>Inputs</title>
+</head>
+<body>
+    <script src="{% static 'js/add.js' %}"></script>
+    <div align="center">
+        <form id="main-form">
+            {% csrf_token %}
+            <label for="name1">name1</label>
+            <input type="text" class="name" id="name1" name="input-form">
+            <input type="button" class="button" id="button1" value="Добавить" name="input-form" onclick="addInput()">
+            <input type="button" class="button" id="button2" value="Отправить" name="input-form" onclick="submitForm()">
+        </form>
+        <a href="{% url 'inputs:inputs_result' %}">Результат</a>
+    </div>
+</body>
+</html>
